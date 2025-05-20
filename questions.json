@@ -348,5 +348,50 @@
     "question": "If x and y are inversely proportional and x=2 gives y=3, y when x=6?",
     "options": { "A": "8", "B": "6", "C": "1", "D": "Not given" },
     "correct": "C"
+  },
+  {
+    "question": "If x and y are inversely proportional and x=4 gives y=4, y when x=8?",
+    "options": { "A": "8", "B": "6", "C": "2", "D": "Not given" },
+    "correct": "C"
+  },
+  {
+    "question": "If triangle has base of a and height of h, area?",
+    "options": { "A": "2ah", "B": "3ah", "C": "ah", "D": "ah/2" },
+    "correct": "D"
+  },
+  {
+    "question": "If x = 2y + 1, z = x + y, following expression 3x + z + y equals to?",
+    "options": { "A": "9y+4", "B": "9y+3", "C": "10y+4", "D": "10y+3" },
+    "correct": "C"
+  },
+  {
+    "question": "A line passes (0,99) and (1,100). Slope=??",
+    "options": { "A": "0", "B": "100", "C": "99", "D": "Not given" },
+    "correct": "D"
+  },
+  {
+    "question": "Sum of integers 1 to 50?",
+    "options": { "A": "Not defined", "B": "1275", "C": "1225", "D": "1725" },
+    "correct": "B"
+  },
+  {
+    "question": "Domain of f(x)=√x?",
+    "options": { "A": "All real x", "B": "x≠0", "C": "x≠-1", "D": "x≥0" },
+    "correct": "D"
+  },
+  {
+    "question": "Domain of f(x)=9999x^2-x-4x/8?",
+    "options": { "A": "All real x", "B": "x≠0", "C": "x≠-1", "D": "x≥0" },
+    "correct": "A"
+  },
+  {
+    "question": "Range of f(x)=√x?",
+    "options": { "A": "All real y", "B": "y≠0", "C": "y≠-1", "D": "y≥0" },
+    "correct": "D"
+  },
+  {
+    "question": "3! equals?",
+    "options": { "A": "7", "B": "52-46", "C": "74-58", "D": "Not given" },
+    "correct": "B"
   }
 ]
