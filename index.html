@@ -4,22 +4,54 @@
         <title>SAT Battle</title>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
         <style>
+            :root {
+                --bg-color: #F5F3FA;
+                --text-color: #4E4A5D;
+                --option-bg: #E5E1F0;
+                --accent-color: #6C6390;
+            }
+            body.dark {
+                --bg-color: #1E1B2E;
+                --text-color: #DCD6F7;
+                --option-bg: #3C3553;
+                --accent-color: #AFA2D5;
+            }
             body{
-                background-color: #F5F3FA;
+                background-color: var(--bg-color);
                 font-family: 'IBM Plex Sans', sans-serif;
                 text-align: center;
-                color: #4E4A5D;
+                color: var(--text-color);
                 transition: background-color 0.3s ease, color 0.3s ease;
             }
             p{
                 font-family: 'IBM Plex Sans', sans-serif;
             }
-            h1{
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-size: 25px;
-                margin: 45px;
-                text-align: center;
-                color: #7B7691;
+            .site-header {
+                display: flex;
+                justify-content: space-between; /* pushes title left, button right */
+                align-items: center;
+                padding: 20px;
+                background-color: var(--bg-color); /* uses CSS variable */
+            }
+
+            .site-title {
+                font-size: 2rem;
+                color: var(--text-color);
+                margin: 0;
+            }
+            .theme-toggle {
+                background-color: transparent;
+                border: 2px solid var(--accent-color);
+                color: var(--accent-color);
+                border-radius: 50%;
+                font-size: 1.2rem;
+                padding: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .theme-toggle:hover {
+                background-color: var(--accent-color);
+                color: var(--bg-color);
             }
             .Question{
                 font-family: 'IBM Plex Sans', sans-serif;
@@ -27,13 +59,13 @@
                 margin: 20px;
                 text-align: center;
             }
-            .option { display: block; padding: 10px; margin: 5px; cursor: pointer; border-radius: 8px; background-color: #E5E1F0 ; font-family: 'IBM Plex Sans', sans-serif; transition: background-color 0.3s ease, transform 0.2s ease;}
+            .option { display: block; padding: 10px; margin: 5px; cursor: pointer; border-radius: 8px; background-color: var(--option-bg) ; font-family: 'IBM Plex Sans', sans-serif; transition: background-color 0.3s ease, transform 0.2s ease;}
             .option:hover{ background-color: #CBC3DD  ;transform: translateY(-2px);}
             .selected { background-color: #D4CDE4  }
             .button{ text-align: center; padding: 150px; transition: background-color 0.3s ease, transform 0.2s ease;}
             .score{
                 font-size: 20px;
-                background-color: #EDE8F5 ;
+                background-color: var(--accent-color) ;
                 padding: 15px;
                 transition: background-color 0.3s ease, color 0.3s ease;
 
@@ -61,7 +93,10 @@
     </head>
 
     <body>
-        <h1>Solve SAT problems in engaging way</h1>
+        <header class="site-header">
+            <h1 class="site-title">Moonlight Quiz</h1>
+            <button id="themeToggle" class="theme-toggle">☾</button>
+        </header>
 
   <h2 id="question" class="Question">Loading question...</h2>
   <div id="options" class="Question"></div>
@@ -73,6 +108,14 @@
   <script>
 (function(_0x11a137,_0x668b94){const _0x4e49b3=_0x14d4,_0x5cc314=_0x11a137();while(!![]){try{const _0x5840fe=-parseInt(_0x4e49b3(0x115))/0x1+parseInt(_0x4e49b3(0x11a))/0x2+-parseInt(_0x4e49b3(0x10e))/0x3+-parseInt(_0x4e49b3(0x121))/0x4*(-parseInt(_0x4e49b3(0x128))/0x5)+-parseInt(_0x4e49b3(0x126))/0x6*(parseInt(_0x4e49b3(0x11d))/0x7)+-parseInt(_0x4e49b3(0x108))/0x8*(parseInt(_0x4e49b3(0x10d))/0x9)+parseInt(_0x4e49b3(0x12b))/0xa;if(_0x5840fe===_0x668b94)break;else _0x5cc314['push'](_0x5cc314['shift']());}catch(_0x2d3cdf){_0x5cc314['push'](_0x5cc314['shift']());}}}(_0x1f69,0x83008));let score=0x0,answered=![],questions=[],currentQuestion=null,selectedOption=null;async function loadQuestions(){const _0x33b75f=_0x14d4,_0xb7160=await fetch(_0x33b75f(0x109));questions=await _0xb7160['json'](),loadNextQuestion();}function loadNextQuestion(){const _0x4cdf7b=_0x14d4;answered=![],document[_0x4cdf7b(0x118)]('result')[_0x4cdf7b(0x117)]='',selectedOption=null,currentQuestion=questions[Math[_0x4cdf7b(0x122)](Math[_0x4cdf7b(0x114)]()*questions['length'])],document['getElementById']('question')[_0x4cdf7b(0x117)]=currentQuestion[_0x4cdf7b(0x11e)];const _0x24b622=document[_0x4cdf7b(0x118)](_0x4cdf7b(0x10f));_0x24b622[_0x4cdf7b(0x11f)]='';for(const [_0x487a84,_0x24fdbe]of Object['entries'](currentQuestion[_0x4cdf7b(0x10f)])){const _0x405711=document[_0x4cdf7b(0x11c)](_0x4cdf7b(0x10b));_0x405711[_0x4cdf7b(0x120)]=_0x4cdf7b(0x12a),_0x405711['textContent']=_0x487a84+'.\x20'+_0x24fdbe,_0x405711['dataset'][_0x4cdf7b(0x123)]=_0x487a84,_0x405711['onclick']=()=>{const _0x36d9e9=_0x4cdf7b;document[_0x36d9e9(0x127)](_0x36d9e9(0x10a))[_0x36d9e9(0x116)](_0x24ee46=>_0x24ee46['classList'][_0x36d9e9(0x113)](_0x36d9e9(0x111))),_0x405711['classList'][_0x36d9e9(0x110)](_0x36d9e9(0x111)),selectedOption=_0x487a84;},_0x24b622[_0x4cdf7b(0x112)](_0x405711);}}function _0x14d4(_0x54d401,_0x4189ec){const _0x1f697f=_0x1f69();return _0x14d4=function(_0x14d440,_0x7498b1){_0x14d440=_0x14d440-0x108;let _0x552e59=_0x1f697f[_0x14d440];return _0x552e59;},_0x14d4(_0x54d401,_0x4189ec);}function submitAnswer(){const _0x2fc1e7=_0x14d4;if(answered)return;if(!selectedOption){document[_0x2fc1e7(0x118)](_0x2fc1e7(0x10c))['textContent']=_0x2fc1e7(0x129);return;}const _0x245871=selectedOption===currentQuestion[_0x2fc1e7(0x11b)];_0x245871==!![]&&score++,document[_0x2fc1e7(0x118)](_0x2fc1e7(0x10c))[_0x2fc1e7(0x117)]=_0x245871?_0x2fc1e7(0x119):_0x2fc1e7(0x125),answered=!![],document[_0x2fc1e7(0x118)](_0x2fc1e7(0x124))['textContent']='Score:\x20'+score;}loadQuestions();function _0x1f69(){const _0x3d1c39=['Correct!','1554616upjwel','correct','createElement','581Yvudga','question','innerHTML','className','272ZOinNP','floor','value','score','Incorrect.','63876KTVxUZ','querySelectorAll','55130lzKkvI','Please\x20select\x20an\x20option.','option','20058800MVZhJu','2348272hlxVQA','questions.json','.option','div','result','18uvNiqf','2660025uOdybc','options','add','selected','appendChild','remove','random','639011IapPkE','forEach','textContent','getElementById'];_0x1f69=function(){return _0x3d1c39;};return _0x1f69();}
   </script>
+  <script>
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀' : '☾';
+  });
+</script>
+
 
 
 
