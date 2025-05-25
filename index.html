@@ -8,13 +8,19 @@
                 --bg-color: #F5F3FA;
                 --text-color: #4E4A5D;
                 --option-bg: #E5E1F0;
+                --option-selected-bg: #C6BEDF;
+                --option-text-color: #4E4A5D;
                 --accent-color: #6C6390;
+                --button-text-color: white;
             }
             body.dark {
                 --bg-color: #1E1B2E;
                 --text-color: #DCD6F7;
                 --option-bg: #3C3553;
+                --option-selected-bg: #5A5172;
+                --option-text-color: #E0DAF5;
                 --accent-color: #AFA2D5;
+                --button-text-color: #F5F3FA;
             }
             body{
                 background-color: var(--bg-color);
@@ -59,13 +65,12 @@
                 margin: 20px;
                 text-align: center;
             }
-            .option { display: block; padding: 10px; margin: 5px; cursor: pointer; border-radius: 8px; background-color: var(--option-bg) ; font-family: 'IBM Plex Sans', sans-serif; transition: background-color 0.3s ease, transform 0.2s ease;}
-            .option:hover{ background-color: #CBC3DD  ;transform: translateY(-2px);}
-            .selected { background-color: #D4CDE4  }
+            .option { display: block; padding: 10px; margin: 5px; cursor: pointer; border-radius: 8px; background-color: var(--option-bg) ; font-family: 'IBM Plex Sans', sans-serif; transition: background-color 0.3s ease, transform 0.2s ease; color: var(--option-text-color);}
+            .option:hover{ background-color: #CBC3DD  ;transform: translateY(-2.5px);}
+            .selected { background-color: var(--option-selected-bg); }
             .button{ text-align: center; padding: 150px; transition: background-color 0.3s ease, transform 0.2s ease;}
             .score{
                 font-size: 20px;
-                background-color: var(--accent-color) ;
                 padding: 15px;
                 transition: background-color 0.3s ease, color 0.3s ease;
 
@@ -74,6 +79,7 @@
                 font-size: 18px;
             }
             .submit-btn {
+                color: var(--button-text-color);
                 padding: 12px 24px;        /* Makes it bigger */
                 font-size: 16px;           /* Larger text */
                 background-color: #AFA2D5 ; /* Nice purple shade */
@@ -85,7 +91,7 @@
             }           
             .submit-btn:hover {
                 background-color: #988DC0 ; /* Darker on hover */
-                transform: scale(1.03);
+                transform: scale(1.04);
             }
         </style>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5872986918019324"
