@@ -141,7 +141,7 @@
   },
   {
     "question": "Simplify 4(x−2)+8.",
-    "options": { "A": "Not given", "B": "4x−8", "C": "4x+0", "D": "4x " },
+    "options": { "A": "Not given", "B": "4x−8", "C": "4x+8", "D": "4x " },
     "correct": "D"
   },
   {
